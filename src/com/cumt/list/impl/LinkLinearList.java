@@ -159,10 +159,25 @@ public class LinkLinearList<E> implements LinearList<E> {
     @Override
     public void display() {
         Node node = header;
-        while (node != null){
-            System.out.print(node.data+",");
-            node = node.next;
+//        while (node != null){
+//            System.out.print(node.data+",");
+//            node = node.next;
+//        }
+        displayRecursion(node);
+    }
+
+    /**
+     * 链表遍历递归实现
+     * @param node
+     */
+    public void displayRecursion(Node node){
+        if(node != null){
+            System.out.println(node.data+",");
+            if(node.next != null){//递归结束条件
+                displayRecursion(node.next);
+            }
         }
+
     }
 
     //尾插
